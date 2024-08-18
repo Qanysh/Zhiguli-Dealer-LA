@@ -83,7 +83,8 @@ table 50100 Car
         {
             Caption = 'Option Price';
             FieldClass = FlowField;
-            CalcFormula = sum("Car Option".Price);
+            CalcFormula = sum("Car Option".Price WHERE(VIN = field(VIN)));
+
         }
         field(92; "Total Price"; Decimal)
         {

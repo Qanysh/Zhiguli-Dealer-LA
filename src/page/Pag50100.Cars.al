@@ -56,6 +56,7 @@ page 50100 Cars
         {
             part(PricesPart; "Prices Sub")
             {
+                SubPageLink = VIN = field(VIN);
             }
         }
     }

@@ -1,7 +1,7 @@
 page 50101 "Car Options"
 {
     ApplicationArea = All;
-    Caption = 'CarOptions';
+    Caption = 'Car Option';
     PageType = ListPart;
     SourceTable = "Car Option";
     UsageCategory = None;

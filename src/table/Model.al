@@ -18,7 +18,7 @@ table 50102 Model
 
     keys
     {
-        key(Key1; Code)
+        key(pk; Code)
         {
             Clustered = true;
         }
