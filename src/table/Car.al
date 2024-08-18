@@ -101,32 +101,51 @@ table 50100 Car
         }
     }
     trigger OnInsert()
-    var
-        RandomValue: Decimal;
     begin
         // Рандомайзер до 100
-        RandomValue := Random(100);
-        "Sales Price" := RandomValue;
+        CalcPrice();
+
         // Заполнение рабочей датой
         "Production Date" := WORKDATE;
     end;
 
     trigger OnModify()
-    var
-        isAdditionalEquipChecked: Boolean;
     begin
         // Очистка при изменений BodyType
+        ClearOptions();
+
+        //Очистка поля Add equip Description в зависимости от Additional equipment
+        CheckEquip();
+    end;
+
+    // Рандомайзер до 100
+    procedure CalcPrice()
+    var
+        RandomValue: Decimal;
+    begin
+        RandomValue := Random(100);
+        "Sales Price" := RandomValue;
+    end;
+
+    // Очистка при изменений BodyType
+    procedure ClearOptions()
+    begin
         if "Body Type" <> xRec."Body Type" then begin
             "Height" := 0;
             "Width" := 0;
             "Length" := 0;
         end;
+    end;
 
-        //Очистка поля Add equip Description в зависимости от Additional equipment
+    //Очистка поля Add equip Description в зависимости от Additional equipment
+    procedure CheckEquip()
+    var
+        isAdditionalEquipChecked: Boolean;
+    begin
         isAdditionalEquipChecked := Rec."Additional equipment";
         if not isAdditionalEquipChecked then begin
             "Add equip Description" := '';
         end;
-
     end;
+
 }

@@ -1,27 +1,21 @@
-page 50102 Brands
+page 50107 "Logo Sub"
 {
-    ApplicationArea = All;
-    Caption = 'Brands';
-    PageType = List;
-    SourceTable = Brand;
-    UsageCategory = Lists;
-    CardPageId = "Brand Card";
+    Caption = 'Logo';
+    DeleteAllowed = true;
+    InsertAllowed = false;
+    LinksAllowed = false;
+    PageType = CardPart;
+    SourceTable = "Brand";
 
     layout
     {
-        area(Content)
+        area(content)
         {
-            repeater(General)
+            field(Logo; Rec.Logo)
             {
-                field(Code; Rec.Code)
-                {
-                }
-                field(Name; Rec.Name)
-                {
-                }
-                field(Logo; Rec.Logo)
-                {
-                }
+                ApplicationArea = All;
+                ShowCaption = false;
+                ToolTip = 'Specifies the picture that has been inserted for the item Category.';
             }
         }
     }
@@ -33,7 +27,7 @@ page 50102 Brands
             action(ImportLogo)
             {
                 ApplicationArea = All;
-                Caption = 'Import Logo';
+                Caption = 'Import';
                 Image = Import;
                 ToolTip = 'Import a picture file.';
 
@@ -45,7 +39,7 @@ page 50102 Brands
             action(DeleteLogo)
             {
                 ApplicationArea = All;
-                Caption = 'Delete Logo';
+                Caption = 'Delete';
                 // Доступ к удалению дается через CheckHasLogo()
                 Enabled = DeleteEnabled;
                 Image = Delete;

@@ -14,18 +14,24 @@ table 50101 Brand
         {
             DataClassification = CustomerContent;
         }
-        field(10; Logo; Blob)
+        field(10; Logo; Media)
         {
+            Caption = 'Logo';
             DataClassification = CustomerContent;
-            Subtype = Bitmap;
         }
     }
-
     keys
     {
         key(pk; Code)
         {
             Clustered = true;
+        }
+    }
+    fieldgroups
+    {
+        // вывод Логотипа и Имя марки в режиме Tall Tiles
+        fieldgroup(Brick; Name, Logo)
+        {
         }
     }
 }
