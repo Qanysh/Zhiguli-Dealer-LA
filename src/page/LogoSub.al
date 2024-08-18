@@ -1,7 +1,7 @@
 page 50107 "Logo Sub"
 {
     Caption = 'Logo';
-    DeleteAllowed = true;
+    DeleteAllowed = false;
     InsertAllowed = false;
     LinksAllowed = false;
     PageType = CardPart;
