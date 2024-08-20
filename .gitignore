@@ -1,5 +1,9 @@
-/Arsen Zhamshitov_Zhiguli Dealer LA_1.0.0.0.app
-/app.json
-.alpackages
-.snapshots
-.vscode
+*.app
+rad.json
+*.zip
+*.g.xlf
+*.code-workspace
+.*/*
+!.vscode/launch.json
+!.vscode/settings.json
+!.azuredevops
